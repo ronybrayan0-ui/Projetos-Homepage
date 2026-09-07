@@ -1,0 +1,8 @@
+/* Container Mobile — coletado do Figma */
+/* Largura do container: [VALOR]px */
+
+.container {
+  width: fill 358px;
+  max-width: 1216px;
+  margin: 0 auto; /* Centralizado */
+}

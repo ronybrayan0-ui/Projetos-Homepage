@@ -1,0 +1,8 @@
+/* Container Desktop — coletado do Figma */
+/* Largura do container: [VALOR]px */
+
+.container {
+  width: fill 1216px;
+  max-width: 1216px;
+  margin: 0 auto; /* Centralizado */
+}
