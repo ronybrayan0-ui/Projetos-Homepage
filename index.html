@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage - Studio Academy</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <!-- ==========================================
+         HEADER
+         ========================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <!-- Logo -->
+      <a href="#" class="header__logo">
+        <img src="./assets/icons/logo.png" alt="Studio Academy Logo" />
+      </a>
+
+      <!-- Navegação desktop -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list--text"><a href="#">Home</a></li>
+          <div class="header__nav-list--accordion">
+          <li class="header__nav-list--text"><a href="#">Metodologia</a><img src="./assets/icons/seta-accordion.png" class="header__nav-text--seta"></li>
+          </div>
+          <li class="header__nav-list--text"><a href="#">Aprendizados</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão CTA -->
+      <a href="#" class="btn header__cta">Agende uma Demo</a>
+
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="header__menu-btn" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+         OVERLAY DO MENU MOBILE
+         ========================================== -->
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- ==========================================
+         MENU MOBILE
+         ========================================== -->
+
+  <aside class="menu-mobile" id="menuMobile">
+
+    <header class="menu-mobile__header">
+      <button class="menu-mobile__close" id="menuClose" aria-label="Fechar menu">
+        <img src="./assets/icons/x-close.png" alt="Fechar" />
+      </button>
+    </header>
+
+    <nav class="menu-mobile__nav">
+      <ul class="menu-mobile__list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Metodologia</a></li>
+        <li><a href="#">Aprendizados</a></li>
+      </ul>
+    </nav>
+
+    <footer class="menu-mobile__footer">
+      <ul class="menu-mobile__social">
+        <li>
+          <a href="#" aria-label="X (Twitter)">
+            <img src="./assets/icons/x-twitter.png" alt="X" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <img src="./assets/icons/linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook">
+            <img src="./assets/icons/facebook.png" alt="Facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="WhatsApp">
+            <img src="./assets/icons/whatsapp.png" alt="WhatsApp" />
+          </a>
+        </li>
+      </ul>
+      <a href="#" class="btn menu-mobile__cta">Fale conosco</a>
+    </footer>
+
+  </aside>
+
+  <!-- ==========================================
+         HERO
+         ========================================== -->
+
+  <section class="hero">
+
+          <!-- Imagem de fundo (desktop) -->
+    <img class="hero__bg" src="./assets/images/hero-mulher-desktop.jpeg" alt="" aria-hidden="true" />
+
+    <div class="container hero__inner">
+
+      <!-- Imagem solta (mobile) -->
+      <img class="hero__img-mobile" src="./assets/images/hero-mulher.jpg" alt="Mulher estudando com notebook" />
+
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Bem-vindo à
+          <span class="hero__title-accent">Studio Academy</span>
+        </h1>
+        <p class="hero__text">
+          Transforme seu aprendizado em resultados<br class="hero__text-break hero__text-break--mobile" /> concretos com uma<br class="hero__text-break hero__text-break--desktop" /> metodologia prática e a<br class="hero__text-break hero__text-break--mobile" />orientação de especialistas em cada etapa.
+        </p>
+        <a href="#" class="btn hero__btn">Saiba mais</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+         SEÇÃO 1 - ACORDION
+         ========================================== -->
+
+  <section class="secao1">
+    <div class="container secao1__inner">
+
+      <!-- Conteúdo (texto) -->
+      <div class="secao1__content">
+        <span class="badge badge--azul">Desenvolvimento Front-End</span>
+        <h2 class="secao1__title-desktop secao1__title-mobile">
+        Dando vida às<br /> suas ideias na web
+        </h2>
+        <p class="secao1__text secao1__text-mobile">
+          No desenvolvimento web, o front-end é a<br class="secao1__text-break secao1__text-break--mobile" /> parte visível<br class="secao1__text-break secao1__text-break--desktop" /> do site: a interface que os<br class="secao1__text-break secao1__text-break--mobile" /> usuários interagem. Aqui na<br class="secao1__text-break secao1__text-break--desktop" /> Studio Academy,<br class="secao1__text-break secao1__text-break--mobile" /> você aprenderá a criar páginas<br class="secao1__text-break secao1__text-break--desktop" /> dinâmicas e<br class="secao1__text-break secao1__text-break--mobile" /> responsivas usando HTML, CSS e<br class="secao1__text-break secao1__text-break--desktop" /> JavaScript.
+        </p>
+        <p class="secao1__text secao1__text--bold">
+          Além disso, vai explorar frameworks como Tailwind<br class="secao1__text-break secao1__text-break--desktop2"> CSS e React para desenvolver sites rápidos e<br class="secao1__text-break--desktop2"> interativos.
+        </p>
+      </div>
+
+      <!-- Mídia (imagem + accordion) -->
+      <div class="secao1__media">
+        <div class="secao1__media-wrap">
+        <img class="secao1__img" src="./assets/images/secao-1-homem.jpeg" alt="Homem estudando programação" />
+        <div class="secao1__media-overlay"></div>
+        </div>
+
+        <div class="accordion">
+
+          <details class="accordion__item" open>
+            <summary class="accordion__head">
+              <span class="accordion__title">Metodologia prática</span>
+              <img class="accordion__icon" src="./assets/icons/seta-accordion.png" alt="" aria-hidden="true" />
+            </summary>
+            <div class="accordion__body">
+              <p>Trabalhe em projetos reais desde o primeiro<br class="accordion__body-break accordion__body-break--desktop"> dia, colocando o conhecimento<br class="accordion__body-break accordion__body-break--mobile"> em prática.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__head">
+              <span class="accordion__title">Suporte de especialistas</span>
+              <img class="accordion__icon" src="./assets/icons/seta-accordion.png" alt="" aria-hidden="true" />
+            </summary>
+            <div class="accordion__body">
+              <p>Conte com a orientação de profissionais experientes em cada etapa do aprendizado.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__head">
+              <span class="accordion__title">Ambiente colaborativo</span>
+              <img class="accordion__icon" src="./assets/icons/seta-accordion.png" alt="" aria-hidden="true" />
+            </summary>
+            <div class="accordion__body">
+              <p>Trabalhe em equipe para desenvolver soluções criativas e inovadoras.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+         SEÇÃO 2 - CARDS
+         ========================================== -->
+
+  <section class="section-aprender">
+    <div class="container">
+
+      <span class="badge badge--roxo">Conteúdo do Curso</span>
+      <h2 class="section-aprender__titulo">O que você vai aprender</h2>
+      <p class="section-aprender__texto">
+        No desenvolvimento web, o front-end é a<br class="section-aprender__texto-break section-aprender__texto-break--mobile"> parte visual do site, onde os usuários<br class="section-aprender__texto-break section-aprender__texto-break--mobile"> interagem. Na Studio Academy,<br class="section-aprender__texto-break section-aprender__texto-break--desktop"> você <br class="section-aprender__texto-break section-aprender__texto-break--mobile"> aprenderá a criar páginas dinâmicas e<br class="section-aprender__texto-break section-aprender__texto-break--mobile"> responsivas com HTML, CSS e JavaScript,<br class="section-aprender__texto-break section-aprender__texto-break--mobile"> além de explorar<br class="section-aprender__texto-break section-aprender__texto-break--desktop"> ferramentas como Tailwind<br class="section-aprender__texto-break section-aprender__texto-break--mobile"> CSS e React para sites rápidos e interativos.
+      </p>
+
+      <section class="section-tabs">
+      <div class="section-tabs__content">
+      <nav class="tabs-nav">
+        <ul class="tabs-nav__list">
+          <li class="tabs-nav__btn ativo">Todos</li>
+          <li class="tabs-nav__btn">Front-end</li>
+          <li class="tabs-nav__btn">Back-end</li>
+        </ul>
+      </nav>
+      </div>
+      </section>
+
+      <ul class="cards">
+        <li class="card">
+          <img class="card__icone" src="./assets/icons/icon-html-css.png" alt="HTML e CSS" />
+          <img class="card__icone1" src="./assets/icons/Icons (2).png" alt="HTML e CSS">
+          <div class="card__container">
+          <h3 class="card__titulo">HTML e CSS</h3>
+        </br>
+          <p class="card__texto">
+            A estrutura básica de qualquer página<br class="card__texto-break card__texto-break--desktop"> web, que define a organização e o<br class="card__texto-break card__texto-break--desktop"> conteúdo e como estilizar e tornar suas<br class="card__texto-break card__texto-break--desktop"> páginas visualmente atraentes, com foco<br class="card__texto-break card__texto-break--desktop"> em layouts modernos e responsivos.
+          </p>
+          </div>
+        </li>
+
+        <li class="card">
+          <img class="card__icone" src="./assets/icons/icon-javascript.png" alt="JavaScript" />
+          <img class="card__icone1" src="./assets/icons/5.png" alt="JavaScript">
+          <div class="card__container">
+          <h3 class="card__titulo">JavaScript</h3>
+        </br>
+          <p class="card__texto">
+            Tornando suas páginas interativas,<br class="card__texto-break card__texto-break--desktop"> adicionando funcionalidades dinâmicas<br class="card__texto-break card__texto-break--desktop"> que permitem que os usuários interajam<br class="card__texto-break card__texto-break--desktop"> com o conteúdo.
+          </p>
+          </div>
+        </li>
+
+        <li class="card">
+          <img class="card__icone" src="./assets/icons/7.png" alt="Frameworks" />
+          <img class="card__icone1" src="./assets/icons/7 - desktop.png" alt="Frameworks">
+          <div class="card__container">
+          <h3 class="card__titulo">Frameworks e Ferramentas</h3>
+        </br>
+          <p class="card__texto">
+            Como utilizar Tailwind CSS para criar<br class="card__texto-break card__texto-break--desktop"> layouts rápidos e customizados, e React<br class="card__texto-break card__texto-break--desktop"> para construir interfaces dinâmicas e<br class="card__texto-break card__texto-break--desktop"> escaláveis.
+          </p>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+  <!--Portfólio de Projetos-->
+  <section class="section-main">
+    <div class="container">
+      <div class="section-portfolio">
+
+        <div class="section-portfolio__conteudo-wrap">
+          <div class="section-portfolio__conteudo">
+            <span class="badge badge-section--azul">
+              Aplicando habilidades
+            </span>
+            <h2 class="section-portfolio__titulo">Portfólio de Projetos</h2>
+            <p class="section-portfolio__descricao">
+              Explore o portfólio dos nossos alunos e<br class="section-portfolio--break section-portfolio-break--mobile"> descubra como<br class="section-portfolio--break section-portfolio-break--desktop"> eles aplicaram seus<br class="section-portfolio--break section-portfolio-break--mobile"> conhecimentos adquiridos em<br class="section-portfolio-break section-portfolio-break--desktop"> Front-End,<br class="section-portfolio--break section-portfolio-break--mobile"> Back-End e Full Stack para criar projetos<br class="section-portfolio-break section-portfolio-break--mobile"><br class="section-portfolio-break section-portfolio-break--desktop"> incríveis. Cada trabalho reflete não apenas o<br class="section-portfolio--break section-portfolio-break--desktop"> aprendizado técnico, mas também a<br class="section-portfolio--break section-portfolio-break--mobile"> capacidade de<br class="section-portfolio--break section-portfolio-break--desktop"> enfrentar e superar desafios<br class="section-portfolio--break section-portfolio-break--mobile"> reais de desenvolvimento<br class="section-portfolio--break section-portfolio-break--desktop"> web
+            </p>
+            <a href="#" class="section-portfolio__cta section-portfolio__cta--desktop">Ver mais projetos</a>
+          </div>
+        </div>
+
+        <div class="section__cards">
+
+          <!--CARD 1-->
+          <div class="card--portfolio card--portfolio--azul">
+            <img class="card__imagem1" src="./assets/icons/portfolio-1.png" alt="">
+            <img class="card__imagem--desktop1" src="./assets/icons/portfolio-1-desktop.png" alt="">
+            <div class="card__overlay">
+              <div class="card__tags">
+                <span class="card__tecnologias">HTML</span>
+                <span class="card__tecnologias-2">CSS</span>
+              </div>
+              <h3 class="card__titulo-2">Layout Responsivo</h3>
+              <p class="card__text">Criação de um layout responsivo<br class="card__text-break card__text-break--desktop"> com HTML e CSS, incluindo uma<br class="card__text-break card__text-break--desktop"> barra de navegação fixa, uma área<br class="card__text-break card__text-break--desktop"><br class="card__text-break card__text-break--mobile"> de herói com imagem de fundo e<br class="card__text-break card__text-break--desktop"> texto<br class="card__text-break card__text-break--mobile"> centralizado, e uma seção de<br class="card__text-break card__text-break--desktop"> serviços adaptável a<br class="card__text-break card__text-break--mobile"> diferentes<br class="card__text-break card__text-break--desktop"> tamanhos de tela.</p>
+            </div>
+          </div>
+
+          <!--CARD 2-->
+          <div class="card--portfolio card--portfolio--roxo">
+            <img class="card__imagem2" src="./assets/icons/portfolio-2.png" alt="">
+            <img class="card__imagem--desktop2" src="./assets/icons/portfolio-2-desktop.png" alt="">
+            <div class="card__overlay">
+              <div class="card__tags">
+                <span class="card__tecnologias">HTML</span>
+                <span class="card__tecnologias-3">CSS</span>
+                <span class="card__tecnologias-4">JS</span>
+              </div>
+              <h3 class="card__titulo-2">Menu de Navegação</h3>
+              <p class="card__text">Criação de um menu de navegação responsivo<br> utilizando HTML, CSS e JavaScript, com barra fixa,<br> links organizados, efeitos de interação e adaptação<br> automática para diferentes tamanhos de tela.</p>
+
+            </div>
+
+          </div>
+          <a href="#" class="section-portfolio__cta section-portfolio__cta--mobile">Ver mais projetos</a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+         FOOTER
+         ========================================== -->
+
+  <footer class="footer">
+
+    <section class="section-newsletter">
+      <div class="container">
+
+        <div class="newsletter__texto">
+          <h3 class="newsletter__titulo">Pronto para conquistar<br class="newsletter__titulo-break newsletter__titulo-break--mobile"> novos horizontes?</h3>
+          <p class="newsletter__descricao">Na Studio Academy, oferecemos conteúdo exclusivo, dicas de desenvolvimento, e atualizações diretamente no seu e-mail.</p>
+        </div>
+
+        <div class="newsletter__form-wrap">
+          <form class="newsletter__form">
+            <div class="newsletter__grupo">
+              <div class="newsletter__campo">
+                <label for="e-mail" class="newsletter__label">E-mail <span class="label-obrigatório">*</span></label>
+                <input class="newsletter__input" id="e-mail" type="email" placeholder="Digite seu e-mail" name="e-mail">
+              </div>
+
+              <button type="submit" class="newsletter__btn">Inscrever-se</button>
+            </div>
+
+            <footer class="newsletter__footer">
+              <small class="newsletter__aviso">
+                Ao se inscrever em nossa lista de e-mails, você concorda<br class="newsletter__aviso-break newsletter__aviso-break--mobile"> com nossa <a href="#">Política de<br class="newsletter__aviso-break newsletter__aviso-break--desktop"> Privacidade</a>.
+              </small>
+            </footer>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!--Divisão de footer-->
+      <hr class="footer__divisor-2">
+
+      <!-- Topo: marca + navegação -->
+      <div class="footer__topo">
+        <!-- Marca -->
+        <div class="footer__marca">
+          <img src="./assets/icons/logo-branca.png" alt="Studio Academy"/>
+      </br>
+          <ul class="footer__sociais">
+            <li><a href="#" aria-label="X (Twitter)"><img src="./assets/icons/x-twitter.png" alt="X" /></a></li>
+            <li><a href="#" aria-label="LinkedIn"><img src="./assets/icons/linkedin.png" alt="LinkedIn" /></a></li>
+            <li><a href="#" aria-label="Facebook"><img src="./assets/icons/facebook.png" alt="Facebook" /></a></li>
+            <li><a href="#" aria-label="WhatsApp"><img src="./assets/icons/whatsapp.png" alt="WhatsApp" /></a></li>
+          </ul>
+        </div>
+
+        <!-- Navegação -->
+        <nav class="footer__navs">
+
+          <div class="footer__coluna">
+            <h3 class="footer__titulo">Home</h3>
+            <ul class="footer__links">
+              <li><a href="#">Início</a></li>
+              <li><a href="#">Desenvolvimento</a></li>
+              <li><a href="#">Aprendizado</a></li>
+              <li><a href="#">Termos e Condições</a></li>
+              <li><a href="#">Newsletter</a></li>
+            </ul>
+            </div>
+
+          <div class="footer__coluna">
+            <h3 class="footer__titulo">Aprendizado</h3>
+            <ul class="footer__links">
+              <li><a href="#">Back-end</a></li>
+              <li><a href="#">Front-end</a></li>
+              <li><a href="#">Ferramentas</a></li>
+              <li><a href="#">WP</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__coluna">
+            <h3 class="footer__titulo">Metodologias</h3>
+            <ul class="footer__links">
+              <li><a href="#">Especialistas</a></li>
+              <li><a href="#">Alunos</a></li>
+              <li><a href="#">Material</a></li>
+            </ul>
+          </div>
+
+        </nav>
+
+      </div>
+
+      <!-- Divisor -->
+      <hr class="footer__divisor" />
+
+      <!-- Base -->
+      <div class="footer__base">
+        <ul class="footer__legais">
+          <li><a href="#">Privacidade</a></li>
+          <li><a href="#">Termos</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Acessibilidade</a></li>
+        </ul>
+        <p class="footer__copy">&copy; 2026 Studio Visual. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  
+  <!-- ==========================================
+         SCRIPTS
+         ========================================== -->
+
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>
