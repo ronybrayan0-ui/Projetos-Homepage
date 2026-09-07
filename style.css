@@ -1,0 +1,27 @@
+/* style.css - Arquivo principal que importa todos os módulos */
+@import './css/style-guide.css';
+
+/* Importa as variáveis e tokens do projeto (cores, espaçamentos, fontes) */
+@import './css/reset.css';
+
+@import './css/containers.css';
+
+/* Seus estilos customizados vêm a partir daqui... */
+
+@import './css/components.css';
+
+@import './css/header.css';
+
+@import './css/hero.css';
+
+@import './css/menu-mobile.css';
+
+@import './css/secao-1.css';
+
+@import './css/secao-2.css';
+
+@import './css/exercicio-2.css';
+
+@import './css/exercicio-3.css';
+
+@import './css/footer.css';
