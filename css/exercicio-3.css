@@ -1,0 +1,780 @@
+/* portfolio.css - Estilos da seção Portfólio */
+
+/* ============================================
+   BASE: Mobile-First
+   ============================================ */
+
+.section-portfolio {
+  padding: var(--spacing-16) 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-top: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Wrapper de texto+CTA: "dissolve" no mobile (vira filhos diretos do
+   flex .section-portfolio, permitindo reordenar via `order`), e volta a
+   ser uma coluna normal no desktop (ver media query lá embaixo) */
+.section-portfolio__conteudo-wrap {
+  display: contents;
+}
+
+/* Ordem no MOBILE: texto (1) -> cards (2) -> botão (3), igual ao Figma */
+.section-portfolio__conteudo {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section__cards {
+  order: 2;
+}
+
+.section-portfolio__cta {
+  order: 3;
+}
+
+.section-portfolio__titulo {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-4);
+  padding-top: 5px;
+}
+
+.section-portfolio__descricao {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-6);
+}
+
+/* ===== BOTÃO "VER MAIS PROJETOS" ===== */
+.section-portfolio__cta {
+  display: inline-block;
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-4) var(--spacing-6); /* 16px 24px */
+  font-size: var(--text-lg); /* 18px */
+  font-weight: var(--font-medium); /* 500 */
+  color: var(--white);
+  background-color: var(--blue-700);
+  border: none;
+  border-radius: var(--rounded-md);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.section-portfolio__cta:hover {
+  background-color: var(--blue-800);
+}
+
+.section-portfolio__cta--desktop {
+  display: none;
+}
+
+.section-portfolio__cta--mobile {
+  display: inline;
+  margin-top: 32px;
+}
+
+.section-portfolio-break--desktop {
+  display:none;
+}
+
+.section-portfolio-break--mobile {
+  display: inline;
+}
+
+/* Variante azul - "Aplicando habilidades" */
+.badge-section--azul {
+  background-color: var(--blue-100); /* #E6F1FF - fundo azul claro */
+  color: var(--blue-700); /* #0A46EA - texto azul principal */
+}
+
+
+/* ============================================
+   CARDS DE PORTFÓLIO
+   ============================================ */
+
+/* Contêiner que coloca os 2 cards lado a lado */
+.section__cards {
+  display: flex;
+  flex-direction: column; /* empilhados no mobile */
+  gap: var(--spacing-6);
+}
+
+.card--portfolio {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  border-radius: 20px 20px 20px 20px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* Cores de fundo de cada card, iguais ao Figma */
+.card--portfolio--azul {
+  background-color: var(--blue-700);
+}
+
+.card--portfolio--roxo {
+  background-color: var(--purple-600);
+}
+
+.card__imagem1,
+.card__imagem2 {
+  position: relative;
+  z-index: 0; /* garante que a imagem fica ABAIXO do painel branco (.card__overlay) */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+  pointer-events: none;
+}
+
+/* Card 1 (Layout Responsivo): ilustração alta (celular + 2 monitores empilhados).
+   O zoom estava exagerado (scale 1.7) e cortava quase tudo, sobrando só um
+   monitor. Reduzido bastante pra mostrar a ilustração quase inteira,
+   cortando só a pontinha do ícone de cima, igual ao Figma. */
+.card__imagem1 {
+  width: 85%;
+  transform: scale(1) translateY(-2%);
+  padding-bottom: 155px;
+}
+
+/* Card 2 (Menu de Navegação): ilustração única (mockup de navegador),
+   mais larga e mais curta, então precisa de bem menos zoom */
+.card__imagem2 {
+  width: 78%;
+  transform: scale(1.05);
+  padding-bottom: 150px;
+}
+
+.card--portfolio:hover .card__imagem1 {
+  transform: scale(1.15) translateY(-2%);
+}
+
+.card--portfolio:hover .card__imagem2 {
+  transform: scale(1.1);
+}
+
+/* ===== PAINEL BRANCO (badges + título), fixo na base do card ===== */
+
+.card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3; /* garante que fica ACIMA da ilustração (.card__imagem1/2, z-index: 1) */
+  background: var(--white);
+  border-radius: var(--rounded-2xl) var(--rounded-2xl) 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  padding-top: 16px;
+  padding-bottom: 30px;
+  pointer-events: none; /* não há link/botão aqui dentro — mantém o comportamento
+                            simples de hover (via CSS puro no .card--portfolio:hover),
+                            sem interferir em cliques em elementos internos */
+}
+
+.card__overlay:hover {
+  background-color: white;
+  pointer-events: none;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0px;
+  flex: 1;
+  margin-top: 10px;
+}
+
+
+
+/* ===== BADGES (cinza claro, dentro do painel branco) ===== */
+
+.card__tecnologias {
+  background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 32px;
+
+}
+
+.card__tecnologias-2 {
+  background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: 5px;
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 10px;
+   padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.card__tecnologias-3 {
+  background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: 5px;
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 10px;
+   padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.card__tecnologias-4 {
+  background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: 5px;
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 10px;
+   padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/* ===== TÍTULO DO CARD ===== */
+.card__titulo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--blue-700);
+  margin: 0;
+}
+
+.card__text-break--desktop {
+  display: none;
+}
+
+.card__text-break--mobile {
+  display: inline;
+}
+
+.card__titulo-2 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--blue-700);
+  margin: 0;
+  margin-left: 32px;
+}
+
+.card--portfolio--roxo .card__titulo {
+  color: var(--blue-700);
+}
+
+/* ===== TEXTO (descrição) - só aparece no mobile ===== */
+.card__text {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  margin: 0;
+  margin-left: 32px;
+}
+
+.card__imagem--desktop1,
+.card__imagem--desktop2 {
+  display: none;
+}
+
+
+/* ============================================
+   NEWSLETTER (Já está ok)
+   ============================================ */
+
+.section-newsletter {
+  background: var(--gray-900);
+  padding-top: 0px;
+  border-bottom: var(--border-1) solid var(--gray-700);
+  margin-right: 24px;
+  margin-left: 24px;
+  padding-bottom: 48px;
+  height: 316px;
+}
+
+.section-newsletter .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.newsletter__texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  text-align: left;
+  padding-bottom: 0;
+}
+
+.newsletter__titulo {
+  font-size: 30px;
+  font-weight: var(--font-bold);
+  color: var(--white);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.newsletter__titulo-break--mobile {
+  display: inline;
+}
+
+.newsletter__titulo-break--desktop {
+  display: none;
+}
+
+.newsletter__descricao {
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--white);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+.newsletter__form-wrap {
+  width: 100%;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+/* Agrupa campo (label+input) + botão */
+.newsletter__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Agrupa só o label + input */
+.newsletter__campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.newsletter__label {
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--white);
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  color: var(--gray-700);
+  background: var(--gray-50);
+  border: var(--border-1) solid var(--gray-200);
+  border-radius: var(--rounded-md);
+  transition: border-color 0.2s ease;
+  margin-bottom: 16px; /* usado apenas no mobile (input empilhado); resetado no desktop */
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border-color: var(--blue-700);
+}
+
+.newsletter__input::placeholder {
+  color: var(--gray-400);
+}
+
+.newsletter__btn {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-5);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--white);
+  background-color: var(--blue-700);
+  border: none;
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  margin-bottom: 13px; /* usado apenas no mobile (botão empilhado); resetado no desktop */
+}
+
+.newsletter__btn:hover {
+  background-color: var(--blue-800);
+}
+
+.newsletter__erro {
+  display: none;
+  font-size: var(--text-sm);
+  color: var(--red-700);
+  margin-top: var(--spacing-1);
+}
+
+.newsletter__erro.ativo {
+  display: block;
+}
+
+.newsletter__footer {
+  text-align: left;
+  margin-top: var(--spacing-2);
+}
+
+.newsletter__aviso {
+  font-size: 16px;
+  color: var(--white);
+  line-height: var(--leading-normal);
+  text-align: left;
+  height: 42px;
+  width: 352px;
+}
+
+.newsletter__aviso a {
+  color: var(--blue-700);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.newsletter__aviso a:hover {
+  color: var(--blue-700);
+}
+
+.label-obrigatório {
+  color: var(--red-700);
+  font-size: var(--text-sm); /* menor que o texto do label */
+  vertical-align: top;      /* sobe ele, tipo expoente */
+  margin-left: 2px;
+}
+
+.newsletter__aviso-break--mobile {
+  display: inline;
+}
+
+.newsletter__aviso-break--desktop {
+  display: none;
+}
+
+/* ============================================
+   DESKTOP (min-width: 1366px)
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .badge-section--azul {
+    font-size: var(--text-lg);
+    gap: 16px;
+  }
+
+  .section-main {
+    padding: var(--spacing-20) 0;
+  }
+
+  .section-portfolio {
+    padding: 0;
+    flex-direction: row; /* texto ao lado dos cards */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-8);
+  }
+
+  /* No desktop o wrapper volta a existir de verdade (não dissolve mais),
+     pra manter título/descrição/botão juntos na coluna da esquerda,
+     do jeito que já estava certo */
+  .section-portfolio__conteudo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 480px;
+    flex-shrink: 0;
+  }
+
+  .section-portfolio__cta--desktop{
+    display: inline;
+  }
+
+  .section-portfolio__cta--mobile {
+    display: none;
+  }
+
+  .section-portfolio__conteudo {
+    max-width: 480px;
+    flex-shrink: 0;
+  }
+
+  .section-portfolio__titulo {
+    font-size: var(--text-3xl);
+  }
+
+  .section-portfolio__descricao {
+    max-width: 100%;
+  }
+
+  /* ===== OS 2 CARDS LADO A LADO: 300px + 16px + 300px = 616px (igual ao Figma) ===== */
+  .section__cards {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+  }
+
+  .section-portfolio-break--mobile {
+    display: none;
+  }
+
+  .section-portfolio-break--desktop {
+    display: inline;
+  }
+
+  .card--portfolio {
+    width: 300px;
+    height: 463px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+
+  .card__tags {
+    gap: 8px
+  }
+
+  .card__tecnologias {
+    
+    background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: var(--rounded-sm);
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  white-space: nowrap;
+  gap: 8px;
+  margin: 0px;
+  }
+
+  .card__tecnologias-2 {
+    background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: var(--rounded-sm);
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  white-space: nowrap;
+  gap: 8px;
+  margin: 0px;
+  }
+
+  .card__tecnologias-3 {
+    background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: var(--rounded-sm);
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  white-space: nowrap;
+  gap: 8px;
+  margin: 0px;
+  }
+
+  .card__tecnologias-4 {
+    background-color: var(--purple-50);
+  color: var(--purple-600);
+  border-radius: var(--rounded-sm);
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  white-space: nowrap;
+  gap: 8px;
+  margin: 0px;
+  }
+
+  .card__titulo{
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--blue-700);
+  margin: 0;
+  }
+
+  .card__titulo-2 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--blue-700);
+  margin: 0;
+}
+
+
+  .card__overlay {
+    padding: 32px;
+  }
+
+  /* Card roxo fica mais baixo que o azul, igual ao Figma */
+  .card--portfolio--roxo {
+    margin-top: var(--spacing-12); /* 48px */
+  }
+
+  /* Por padrão o texto fica "recolhido" (altura 0) no desktop — some visualmente,
+     mas sem usar display:none, para permitir a transição suave ao abrir e para
+     que o fundo branco do .card__overlay nunca seja afetado por esse estado. */
+  .card__text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  }
+
+  /* Ao passar o mouse (hover) sobre o card, o texto é revelado com uma
+     transição suave — igual ao efeito do primeiro print. Não precisa de
+     JavaScript: é resolvido só com CSS. */
+  .card--portfolio:hover .card__text {
+    max-height: 260px;
+    opacity: 1;
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+
+  .card__text-break--desktop {
+    display: inline;
+  }
+
+  .card__text-break--mobile {
+    display: none;
+  }
+
+  .card__imagem1,
+  .card__imagem2 {
+    display: none;
+  }
+
+  .card__imagem--desktop1 {
+    padding-bottom: 90px
+  }
+
+  .card__imagem--desktop2 {
+    padding-bottom: 100px;
+  }
+
+  .card__imagem--desktop1,
+  .card__imagem--desktop2 {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform: scale(1.2)
+  }
+
+  /* ===== NEWSLETTER DESKTOP ===== */
+
+  .section-newsletter {
+    padding: 48px 0; /* topo E base = 48px, igual ao Figma */
+    margin-left: 32px; /* Figma: 32px nas laterais (era 24px) */
+    margin-right: 32px;
+    height: auto; /* deixa o conteúdo + padding definirem a altura, como no Figma */
+  }
+
+  .section-newsletter .container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-20); /* 80px entre a coluna de texto e o form */
+  }
+
+  .newsletter__texto {
+    flex: 1;
+    text-align: left;
+    max-width: 530px;
+    margin: 0;
+    padding-bottom: 0; /* sem espaço extra artificial abaixo do texto */
+    gap: 24px;
+  }
+
+  .newsletter__titulo {
+    font-size: var(--text-2xl);
+  }
+
+  .newsletter__titulo-break--mobile {
+    display: none;
+  }
+
+  .newsletter__form-wrap {
+    flex: 1;
+  }
+
+  .newsletter__form {
+    gap: 25px; /* Figma: 32px entre a linha do form e o aviso "Ao se inscrever..." */
+    padding-bottom: 48px
+  }
+
+  .newsletter__grupo {
+    flex-direction: row;
+    align-items: flex-end; /* botão alinha com a base do input, não com o label */
+    gap: var(--spacing-4); /* 16px entre input e botão */
+  }
+
+  /* ESSENCIAL: é o filho DIRETO do flex (.newsletter__grupo) que precisa crescer,
+     não o input lá dentro dele. Antes o flex:1 estava no .newsletter__input,
+     que é neto do flex container — por isso não tinha efeito nenhum. */
+  .newsletter__campo {
+    flex: 1;
+
+  }
+
+  .newsletter__aviso-break--mobile {
+    display:none;
+  }
+
+  .newsletter__aviso-break--desktop {
+    display: inline;
+  }
+
+  .newsletter__input {
+    width: 100%;
+    margin-bottom: 0; /* reseta o espaçamento de mobile (empilhado) */
+    height: 56px;
+
+  }
+
+  .newsletter__btn {
+    width: auto;
+    flex-shrink: 0;
+    margin-bottom: 0; /* reseta o espaçamento de mobile (empilhado) */
+    padding: 14px var(--spacing-5); /* Figma: 14px vertical / 20px horizontal */
+    height: 56px;
+  }
+
+  .newsletter__footer {
+    text-align: left;
+  }
+}

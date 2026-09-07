@@ -1,0 +1,310 @@
+/* footer.css - Estilos do footer */
+
+/* ============================================
+   BASE: Mobile-first
+   ============================================ */
+
+/* Footer - fundo escuro */
+.footer {
+  background-color: var(--gray-900); /* #060709 - preto do Figma */
+  color: var(--white); /* Texto branco */
+  padding: 48px 0; /* 48px vertical - espaçamento confortável no mobile */
+}
+
+.footer__divisor-2 {
+  margin-top: 240px;
+  margin-left: auto; /* Centraliza igual ao .container */
+  margin-right: auto; /* Centraliza igual ao .container */
+  width: 100%; /* Igual ao .container no mobile */
+  max-width: 100%; /* Igual ao .container no mobile */
+  border: none; /* Remove borda padrão */
+  border-top: var(--border-1) solid var(--gray-800); /* 1px - linha cinza escura */;
+
+}
+
+/* A partir daqui a linha passa a ter a MESMA largura máxima do .container,
+   usando o mesmo breakpoint (1024px) definido em containers.css. Isso evita
+   que a linha de cima fique maior que a linha de baixo em telas entre
+   1024px e 1366px. */
+@media (min-width: 1024px) {
+  .footer__divisor-2 {
+    max-width: var(--container-desktop); /* 1216px - mesma largura do .container */
+  }
+}
+
+/* ===== TOPO: marca + navegação ===== */
+
+.footer__topo {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Empilha os itens verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto */
+  row-gap: var(--spacing-12); /* 48px - espaço entre marca e colunas */
+  margin-left: 16px; 
+  margin-right: 16px;
+  margin-top: 50px;
+}
+
+
+
+/* ===== MARCA ===== */
+
+.footer__marca {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Empilha logo e sociais */
+  align-items: center; /* Centraliza horizontalmente */
+  row-gap: var(--spacing-4); /* 16px - espaço entre logo e ícones */
+
+}
+
+/* Logo do footer */
+.footer__marca img {
+  width: 120px; /* Largura estimada do print */
+  height: auto; /* Mantém a proporção */
+}
+
+/* ===== ÍCONES SOCIAIS ===== */
+
+.footer__sociais {
+  display: flex; /* Ativa flexbox */
+  flex-direction: row; /* Ícones lado a lado */
+  column-gap: var(--spacing-5); /* 20px - espaço entre os ícones */
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding padrão */
+  margin: 0; /* Remove margem padrão */
+}
+
+/* Links dos ícones sociais */
+.footer__sociais a {
+  display: block; /* Permite tamanho fixo */
+}
+
+/* Ícones sociais */
+.footer__sociais img {
+  width: 24px; /* Tamanho fixo */
+  height: 24px;
+  filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+}
+
+/* ===== NAVEGAÇÃO ===== */
+
+.footer__navs {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Colunas empilhadas no mobile */
+  row-gap: var(--spacing-8); /* 32px - espaço entre as colunas */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+
+/* Cada coluna */
+.footer__coluna {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Título + links empilhados */
+  row-gap: var(--spacing-3); /* 12px - espaço entre título e links */
+  align-items: center; /* Centraliza no mobile */
+}
+
+
+/* Título da coluna - cinza claro */
+.footer__titulo {
+  font-size: var(--text-sm); /* 14px */
+  font-weight: 500px; /* 400 */
+  color: var(--gray-400); /* #646E82 - cinza médio */; /* Caixa alta como no print */
+  letter-spacing: var(--tracking-normal); /* 0em */
+  margin: 0; /* Remove margem padrão */
+}
+
+/* Lista de links */
+.footer__links {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Links empilhados */
+  row-gap: 12px; /* 8px - espaço entre os links */
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding padrão */
+  margin: 0; /* Remove margem padrão */
+  align-items: center; /* Centraliza no mobile */
+  margin-top: 16px;
+}
+
+
+/* Links individuais */
+.footer__links a {
+  color: var(--white); /* Branco */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: var(--text-base); /* 16px */
+  font-weight: var(--font-normal); /* 400 */
+  transition: color 0.2s ease; /* Transição suave para hover */
+}
+
+.footer__links a:hover {
+  color: var(--gray-400); /* Cinza médio no hover */
+}
+
+/* ===== DIVISOr ===== */
+
+.footer__divisor {
+  border: none; /* Remove borda padrão */
+  border-top: var(--border-1) solid var(--gray-800); /* 1px - linha cinza escura */
+  margin: var(--spacing-8) 0; /* 32px vertical - espaço em cima e embaixo */
+}
+
+/* ===== BASE ===== */
+
+.footer__base {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Empilha links legais e copyright */
+  align-items: center; /* Centraliza horizontalmente */
+  row-gap: var(--spacing-6); /* 24px - espaço entre os blocos */
+  width: 100%; /* Ocupa toda a largura */
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding: 0;
+}
+
+/* ===== LINKS LEGAIS (2 por linha) ===== */
+
+.footer__legais {
+  display: flex; /* Ativa flexbox */
+  flex-wrap: wrap; /* Permite quebrar linha */
+  justify-content: space-between; /* Espalha pelas laterais */
+  list-style: none; /* Remove marcadores */
+  padding: 0; /* Remove padding padrão */
+  margin: 0; /* Remove margem padrão */
+  width: 100%; /* Ocupa toda a largura */
+  row-gap: 28px;
+  padding-bottom: 48px;
+}
+
+/* Cada item - 2 por linha */
+.footer__legais li {
+  width: 50%; /* Metade da largura para 2 por linha */
+  text-align: center; /* Centraliza o texto */
+}
+
+
+/* Links legais */
+.footer__legais a {
+  color: var(--white); /* Branco */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: var(--text-sm); /* 14px */
+  transition: color 0.2s ease; /* Transição suave para hover */
+}
+
+
+.footer__legais a:hover {
+  color: var(--gray-400); /* Cinza médio no hover */
+}
+
+
+
+/* ===== COPYRIGHT ===== */
+
+.footer__copy {
+  font-size: var(--text-sm); /* 14px */
+  color: white; /* #646E82 - cinza médio */
+  text-align: center; /* Centralizado */
+  margin: 0; /* Remove margem padrão */
+}
+
+
+/* footer.css - Media-query desktop */
+
+/* ============================================
+   DESKTOP: Ajustes para telas maiores
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .footer {
+    padding: 48px 0;
+    padding-bottom: 0px;
+  }
+
+  .footer__divisor-2 {
+    display: none;
+  }
+
+  .footer__topo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    row-gap: 0;
+    margin-left: 0px;
+    padding-bottom: 48px;
+  }
+
+  .footer__marca {
+    align-items: flex-start; /* estava center — no Figma é alinhado à esquerda */
+    row-gap: 48px;
+
+  }
+
+  .footer__marca br {
+    display: none; /* remove o gap duplicado causado pelo <br> */
+  }
+
+  .footer__navs {
+    flex-direction: row;
+    column-gap: 32px;
+    width: 800px;
+    max-width: 800px;
+    padding-left: 80px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+
+  .footer__coluna {
+    align-items: flex-start;
+    gap: 16px;
+    width: 218px; /* largura fixa igual ao Figma, garante posição correta */
+  }
+
+  .footer__titulo {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-normal);
+    height: 21px;
+    width: 260px;
+    font-size: var(--text-sm);
+    
+  }
+
+  .footer__links {
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 0;
+  }
+
+
+  .footer__base {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 0pxp;
+  }
+
+  .footer__divisor {
+    margin: 0px 0;
+  }
+
+  .footer__legais {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 48px;
+    width: auto;
+    padding-top: 48px;
+  }
+
+  .footer__legais li {
+    width: auto;
+  }
+
+  .footer__copy {
+    color: white;
+  }
+
+}

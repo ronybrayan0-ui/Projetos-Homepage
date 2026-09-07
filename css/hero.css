@@ -1,0 +1,230 @@
+/* hero.css - Estilos da seção Hero */
+
+/* ============================================
+   BASE: Mobile-first
+   ============================================ */
+
+.hero {
+  background-color: var(--gray-50);
+  padding: var(--spacing-8) 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.hero__bg {
+  display: none;
+}
+
+.hero__overlay {
+  display: none;
+}
+
+/* ===== IMAGEM MOBILE ===== */
+
+.hero__img-mobile {
+  display: block;
+  width: 358px;
+  height: 202px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--rounded-2xl);
+  margin-bottom: var(--spacing-6);
+  gap: 16px;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  gap: var(--spacing-4);
+  max-width: 100%;
+}
+
+.hero__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--gray-700);
+  text-align: left;
+}
+
+.hero__title-accent {
+  display: block;
+  color: var(--blue-700);
+   line-height: var(--leading-tight);
+   
+}
+
+.hero__text {
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  max-width: 100%;
+  margin-bottom: var(--spacing-2);
+  text-align: left;
+  gap: 16px;
+}
+
+/* Controla qual quebra de linha aparece em cada breakpoint */
+.hero__text-break--mobile {
+  display: inline;
+}
+
+.hero__text-break--desktop {
+  display: none;
+}
+
+.hero__btn {
+    display: flex;
+    width: 200px;
+    height:64px;
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--white);
+    background-color: var(--blue-700);
+    border: none;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    text-decoration: none;
+    text-align: left;
+    transition: 0.2s ease;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__btn:hover {
+    background-color: var(--blue-800);
+
+  }
+
+/* ============================================
+   DESKTOP
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 502px;
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-50);
+    padding: var(--spacing-16) 0;
+  }
+
+  .hero__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% center;
+    z-index: 0;
+    /* mantém a mulher visível à direita */
+    
+  }
+
+  .hero:before {
+    display: block;
+    position: absolute;
+    content:"";
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+            270deg,
+            rgba(237, 237, 237, 0) 29.62%,
+            rgba(237, 237, 237, 0.8) 64.58%,
+            #ededed 100%
+          );
+  }
+
+  
+  .hero__inner {
+    position: static;
+    z-index: 2;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero__img-mobile {
+    display: none;
+  }
+
+  .hero__content {
+    text-align: left;
+    align-content: flex-start;
+    max-width: 50%;
+    
+  }
+
+  .hero__title {
+    font-size: var(--text-4xl);
+    max-width: 100%;
+  }
+
+  .hero__text {
+    margin-top: 0px; /* informação coletada do layout figma */
+      margin-bottom: 17px; /* informação coletada do layout figma */
+
+      font-size: 18px; /* informação coletada do layout figma */
+      font-weight: 500; /* informação coletada do layout figma */
+      line-height: 27px; /* informação coletada do layout figma */
+      color: #252B37; /* informação coletada do layout figma */
+      
+  }
+
+  /* No desktop, a quebra some do mobile e aparece a do Figma */
+  .hero__text-break--mobile {
+    display: none;
+  }
+
+  .hero__text-break--desktop {
+    display: inline;
+  }
+
+  /* ==========================================
+     BOTÃO - IDÊNTICO AO FIGMA
+     ========================================== */
+
+  .hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 64px;
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--white);
+    background-color: var(--blue-700);
+    border: none;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s ease;
+    flex-shrink: 0;
+    gap: 32px;
+  }
+
+  .hero__btn:hover {
+    background-color: var(--blue-800);
+  }
+}

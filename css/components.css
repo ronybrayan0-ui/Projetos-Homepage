@@ -1,0 +1,45 @@
+/* style.css - Estilos do botão principal */
+
+.btn {
+  display: inline-block; /* Permite padding e largura/altura, mas mantém em linha */
+  padding: var(--spacing-4) var(--spacing-6); /* 16px vertical, 24px horizontal */
+  font-size: var(--text-base); /* 16px */
+  font-weight: var(--font-medium); /* 500 */
+  color: var(--white); /* Texto branco */
+  background-color: var(--blue-700); /* Fundo azul principal */
+  border: none; /* Remove borda padrão */
+  border-radius: var(--rounded-md); /* 8px - arredondamento suave */
+  cursor: pointer; /* Muda cursor para indicar clique */
+  text-align: center; /* Centraliza texto */
+  text-decoration: none; /* Remove sublinhado se usado em links */
+  transition: 0.2s ease; /* Transição suave para hover */
+}
+
+.btn:hover {
+  background-color: var(--blue-800); /* Escurece o fundo no hover */
+}
+  /* style.css - Badge */
+
+/* Classe Base do badge */
+.badge {
+  display: inline-block; /* Permite padding e fica em linha */
+  padding: var(--spacing-0-5) var(--spacing-3); /* 2px vertical, 12px horizontal */
+  font-size: var(--text-lg); /* 18px */
+  font-weight: var(--font-bold); /* 700 */
+  border-radius: var(--rounded-sm); 
+  text-align: center; /* Centraliza texto */
+  white-space: nowrap; /* Impede quebra de linha */
+  margin-bottom: 16px;
+}
+
+/* Variante azul */
+.badge--azul {
+  background-color: var(--blue-100); /* Fundo azul claro #E6F1FF */
+  color: var(--blue-700); /* Texto azul principal #0A46EA */
+}
+
+/* Variante roxa */
+.badge--roxo {
+  background-color: var(--purple-50); /* Fundo lilás claro #F6F0FF */
+  color: var(--purple-600); /* Texto roxo principal #6235E7 */
+}

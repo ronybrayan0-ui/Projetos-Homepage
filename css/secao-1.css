@@ -1,0 +1,328 @@
+/* secao-1.css - Estilos da Seção 1 */
+
+/* ============================================
+   BASE: Mobile-first
+   ============================================ */
+
+.secao1 {
+  padding: 100px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 144px;
+}
+
+.secao1__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+/* ===== ORDEM DOS ELEMENTOS NO MOBILE ===== */
+
+.secao1__content {
+  order: 1;
+  padding-left: 0; 
+}
+
+.secao1__media {
+  order: 2;
+  display: grid;
+}
+
+/* ===== IMAGEM ===== */
+
+.secao1__media-wrap {
+  position: relative;
+  width: 355px;
+  height: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 33px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.secao1__img {
+  display: block;
+  width: 100%;
+  height: 316px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.7) scaleX(-1);
+  border-radius: 31px;
+}
+
+/* Overlay azul real (div do HTML), por cima da imagem.
+   ::after não funciona em <img>, por isso usamos essa div */
+.secao1__media-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 46, 196, 0) 27%, rgba(0, 46, 196, 0.2) 51%, var(--blue-700) 100%);
+
+}
+
+/* ===== ACCORDION ===== */
+
+.accordion {
+  /* removidos: position, left, right, bottom, margin-left, margin-right, justify-content, align-content */
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  margin-top: 178px;
+  z-index: 10; /* mantido */
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  box-shadow: var(--shadow-soft-xl);
+  padding: var(--spacing-2);
+  width: 325px;
+  gap: 10px;
+}
+
+
+.accordion__item {
+  border-radius: var(--rounded-md);
+}
+
+
+/* ===== ITEM ABERTO - borda azul completa, igual ao Figma ===== */
+
+.accordion__item[open] {
+  border: var(--border-2) solid var(--blue-800);
+  border-radius: var(--rounded-md);
+}
+
+/* ===== CABEÇALHO DO ACCORDION ===== */
+
+.accordion__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-5);
+  cursor: pointer;
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  color: var(--gray-700);
+  list-style: none;
+  transition: color 0.3s ease;
+   border: 1px solid var(--gray-100);
+   border-radius: 8px;
+}
+
+.accordion__item[open] .accordion__head {
+  border: 0px 
+}
+
+.accordion__head::-webkit-details-marker {
+  display: none;
+}
+
+/* Remove o contorno preto padrão do navegador ao clicar/focar no summary */
+.accordion__head {
+  outline: none;
+}
+
+.accordion__head:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 2px;
+}
+
+/* ===== ÍCONE DA SETA ===== */
+
+.accordion__icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0; /* Impede que a seta encolha */
+}
+
+/* ===== CORPO DO ACCORDION ===== */
+
+.accordion__body {
+  display: none;
+  padding: 0 var(--spacing-5) var(--spacing-4);
+  font-size: var(--text-base);
+  color: var(--gray-700); /* texto mais escuro, como no Figma */
+  line-height: 1.4; /* linhas mais próximas entre si, como no Figma */
+}
+
+/* ===== ITEM ABERTO ===== */
+
+/* Mostra o corpo */
+.accordion__item[open] .accordion__body {
+  display: block;
+}
+
+/* Título fica azul */
+.accordion__item[open] .accordion__head {
+  color: var(--blue-700);
+}
+
+/* ===== SETA FICA AZUL E GIRADA ===== */
+.accordion__item[open] .accordion__icon {
+  transform: rotate(180deg);
+  filter: brightness(0) saturate(100%) invert(27%) sepia(91%) saturate(1000%) hue-rotate(210deg) brightness(95%) contrast(101%);
+  /* Filtro que transforma a seta na cor --blue-700 (#0A46EA) */
+}
+
+/* Alternativa: se a seta for um SVG, use fill ou stroke via CSS */
+/*.accordion__item[open] .accordion__icon {
+  transform: rotate(180deg);
+  fill: var(--blue-700);
+  stroke: var(--blue-700);
+}*/
+
+.accordion__body-break--mobile {
+  display: inline;
+}
+
+.accordion__body-break--desktop {
+  display: none;
+}
+
+/* ===== CONTEÚDO (TEXTOS) ===== */
+
+.secao1__title-mobile {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-4);
+}
+
+.secao1__text-mobile {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Controla qual quebra de linha aparece em cada breakpoint */
+.secao1__text-break--mobile {
+  display: inline;
+}
+
+.secao1__text-break--desktop {
+  display: none;
+}
+
+.secao1__text-break--desktop2 {
+  display: none;
+}
+
+.secao1__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.secao1__text--bold {
+  font-weight: var(--font-bold);
+}
+
+/* ============================================
+   DESKTOP
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .secao1 {
+    margin-top: 80px;
+    padding-bottom: 168px;
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+
+  .secao1__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 210px;
+  }
+
+  .secao1__content {
+    order: 2;
+    flex: 1;
+    align-self: center;
+  }
+
+  .secao1__media {
+    order: 1;
+    flex: 1;
+    margin-bottom: 0;
+    min-width: 0;
+
+  }
+
+  .secao1__media-wrap {
+    width: 488px;
+    height: 350px;
+    margin: 0;
+    border-radius: 30px 30px 30px 30px;
+  }
+
+  .secao1__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 30px 30px;
+    transform: scale(1.3) scaleX(-1);
+  }
+
+  .accordion {
+  /* removidos: bottom, right, margin-left, max-width, z-index:10px */
+  justify-self: start;
+  margin-top: 139px;
+  margin-left: 197px;
+  width: 403px;
+  margin-top: 190px;
+}
+
+  .accordion__head {
+    padding: var(--spacing-4) var(--spacing-5);
+  }
+
+  .accordion__body {
+    padding: 0 var(--spacing-5) var(--spacing-4);
+  }
+
+  .accordion__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .accordion__body-break--mobile {
+    display: none;
+  }
+
+  .accordion__body-break--desktop {
+    display: inline;
+  }
+
+  .secao1__title-desktop {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-4);
+  text-align: left;
+  }
+
+  .secao1__text-break--mobile {
+    display: none;
+  }
+
+  .secao1__text-break--desktop {
+    display: inline;
+  }
+
+  .secao1__text {
+    max-width: 488px;
+  }
+
+  .secao1__text-break--desktop2 {
+  display: inline;
+}
+}

@@ -1,0 +1,66 @@
+/* reset.css - Reset CSS moderno e enxuto */
+
+/* 1. Zera margens, paddings e define box-sizing padrão */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Facilita o controle de tamanho pois padding e border passam a fazer parte do tamanho total do elemento */
+}
+
+/* 2. Remove Marcadores padrão de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 3. Remove decoração padrão de links e faz herdarem a fonte */
+a {
+  text-decoration: none;
+  color: inherit; /* Herda a cor do elemento pai */
+  font: inherit; /* Herda a fonte do elemento pai */
+}
+
+/* 4. Botões herdam a fonte do projeto e removem estilos padrão */
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 5. Imagens responsivas por padrão */
+img {
+  max-width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* 6. Tipografia base no body usando a variável de fonte do projeto */
+body {
+  font-family: var(--font-sans); /* Fonte principal definida no style-guide.css */
+  font-weight: var(--font-normal); /* Peso normal (400) */
+  line-height: var(--leading-normal); /* Altura de linha padrão (1.5) */
+  color: var(--gray-700); /* Cor principal de texto */
+  background-color: var(--white); /* Fundo branco padrão */
+  -webkit-font-smoothing: antialiased; /* Suaviza fontes no Chrome/Safari */
+  -moz-osx-font-smoothing: grayscale; /* Suaviza fontes no Firefox */
+}
+
+/* 7. Títulos herdam automaticamente a fonte do body */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+/* 8. Inputs e textareas herdam a fonte do projeto */
+input,
+textarea,
+select {
+  font: inherit;
+}

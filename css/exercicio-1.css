@@ -1,0 +1,206 @@
+/* menu-mobile.css - Estilos do menu mobile */
+
+/* ============================================
+   OVERLAY (fundo escuro atrás do menu)
+   ============================================ */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 998;
+}
+
+.menu-overlay--ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   PAINEL DO MENU
+   ============================================ */
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0; /* Abre pela direita */
+  width: 332px;
+  max-width: 85vw;
+  height: 100vh;
+  z-index: 999;
+  background: var(--white, #ffffff);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* Escondido fora da tela */
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-hard-l, -4px 0 24px rgba(0, 0, 0, 0.15));
+}
+
+.menu-mobile--aberto {
+  transform: translateX(0); /* Entra na tela */
+}
+
+/* ===== CABEÇALHO: botão X ===== */
+
+.menu-mobile__header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 20px;
+  flex-shrink: 0;
+}
+
+.menu-mobile__close {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-mobile__close img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== LINHA DIVISÓRIA ===== */
+
+.menu-mobile__divider {
+  border: none;
+  border-top: 1px solid var(--gray-100, #e5e5e5);
+  margin: 0;
+  width: 100%;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+
+.menu-mobile__nav {
+  flex: 1 1 auto; /* ocupa o espaço disponível, empurrando o footer pra baixo */
+  overflow-y: auto;
+  padding-top: 24px;
+}
+
+.menu-mobile__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-mobile__item {
+  width: 100%;
+}
+
+.menu-mobile__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 0;
+  font-family: var(--font-sans, "Helvetica Neue", Arial, sans-serif);
+  font-size: var(--text-base, 16px);
+  font-weight: var(--font-normal, 400);
+  color: var(--gray-900, #1a1a1a);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* <details>/<summary> usados no item "Metodologia" */
+.menu-mobile__details {
+  width: 100%;
+}
+
+.menu-mobile__link--expandable {
+  list-style: none;
+}
+
+/* Remove a seta/marcador padrão do navegador no <summary> */
+.menu-mobile__link--expandable::-webkit-details-marker {
+  display: none;
+}
+.menu-mobile__link--expandable::marker {
+  content: "";
+}
+
+.menu-mobile__icon {
+  width: 8px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+/* Gira a setinha quando o accordion está aberto */
+.menu-mobile__details[open] .menu-mobile__icon {
+  transform: rotate(90deg);
+}
+
+/* ===== RODAPÉ: REDES SOCIAIS + BOTÃO ===== */
+
+.menu-mobile__footer {
+  flex-shrink: 0;
+  padding: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-mobile__social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-mobile__social a {
+  display: block;
+  line-height: 0;
+}
+
+.menu-mobile__social img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn {
+  background-color: var(--blue-700, #0a46ea);
+  text-decoration: none;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans, "Helvetica Neue", Arial, sans-serif);
+  font-size: var(--text-base, 16px);
+  font-weight: var(--font-medium, 600);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-mobile__cta {
+  color: var(--white, #ffffff);
+}
+
+.menu-mobile__cta:hover {
+  background-color: var(--blue-800, #083aa8);
+}
+
+/* ============================================
+   UTILITÁRIO: impede scroll do body
+   ============================================ */
+
+.no-scroll {
+  overflow: hidden;
+}

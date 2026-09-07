@@ -1,0 +1,182 @@
+/* secao-2.css - Estilos da seção "O que você vai aprender" */
+
+/* ============================================
+   BASE: Mobile-first
+   ============================================ */
+
+.section-aprender {
+  padding: var(--spacing-40) 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 0;
+}
+
+.section-aprender__titulo {
+  font-size: 30px;
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--gray-700);
+  margin-top: 16px;
+  margin-bottom: var(--spacing-5);
+}
+
+.section-aprender__texto {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-8);
+}
+
+/* ============================================
+   CARDS - LISTA FLEX
+   ============================================ */
+
+.cards {
+  display: flex;
+  flex-direction: column; /* Empilhado no mobile */
+  gap: var(--spacing-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============================================
+   CARD INDIVIDUAL - FLEX ITEM
+   ============================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1; /* Ocupa o espaço disponível */
+  background: var(--white);
+  border: var(--border-2) solid var(--gray-100);
+  border-radius: var(--rounded-2xl);
+  padding: var(--spacing-6);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-soft-xl);
+  transform: translateY(-4px);
+}
+
+/* ===== ÍCONE DO CARD ===== */
+
+.card__icone {
+  width: auto;
+  height: auto;
+  flex-shrink: 0; /* Impede que o ícone encolha */
+  margin-bottom: var(--spacing-4);
+}
+
+/* ===== TÍTULO DO CARD ===== */
+
+.card__titulo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.section-aprender__texto-break--mobile {
+  display: inline;
+}
+
+.section-aprender__texto-break--desktop {
+  display: none;
+}
+
+/* ===== TEXTO DO CARD ===== */
+
+.card__texto {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--gray-600);
+  margin: 0;
+  flex: 1; /* Faz o texto ocupar o espaço restante, deixando todos os cards com a mesma altura */
+}
+
+.card__icone1 {
+  display: none;
+}
+
+.card__icone {
+  display: inline;
+}
+
+.card__texto-break--desktop {
+  display: none;
+}
+
+/* ============================================
+   DESKTOP - 3 CARDS LADO A LADO
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .section-aprender {
+    padding: var(--spacing-20) 0;
+    padding-top: 0;
+  }
+  
+
+
+  .section-aprender__titulo {
+    font-size: var(--text-3xl);
+  }
+
+  /* ===== CARDS EM LINHA ===== */
+  .cards {
+    flex-direction: row; /* Cards lado a lado */
+    gap: 32px;
+  }
+
+  /* ===== CADA CARD COM MESMA LARGURA ===== */
+
+  .card {
+    flex: 1; /* Cada card ocupa o mesmo espaço disponível */
+    width: 384px;
+    height: 378px;
+    padding-top: 16px;
+    padding-bottom: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .card__container {
+    margin-bottom: 66px;
+  }
+
+  /* ===== ÍCONE UM POUCO MAIOR NO DESKTOP ===== */
+
+
+  .card__icone1 {
+    width: 128px; /* Largura maior para desktop */
+    height: 128px; /* Altura maior para desktop */
+    margin-bottom: var(--spacing-6);
+  }
+
+  .card__icone {
+    display: none;
+  }
+
+  .card__icone1 {
+    display: inline;
+  }
+
+  .card__texto-break--desktop {
+    display: inline;
+  }
+
+  .section-aprender__texto-break--desktop {
+    display:inline;
+  }
+
+  .section-aprender__texto-break--mobile {
+    display: none;
+  }
+
+
+}

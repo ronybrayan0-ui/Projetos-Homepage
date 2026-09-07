@@ -1,0 +1,151 @@
+/* style-guide.css */
+
+/* Declaração da fonte Inter com peso 500 */
+@font-face {
+  font-family: 'Inter'; /* Nome da família que será usado no CSS */
+  src: url('../assets/fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2'); /* Caminho do arquivo .woff2 na pasta assets */
+  font-weight: 100 900; /* Peso da fonte (medium) */
+  font-style: normal; /* Estilo normal (sem itálico) */
+  font-display: swap; /* Mostra texto com fallback até a fonte carregar */
+}
+
+
+
+@font-face {
+  font-family: 'Inter'; /* Nome da família que será usado no CSS */
+  src: url('../assets/fonts/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'); /* Caminho do arquivo .woff2 na pasta assets */
+  font-weight: 100 900; /* Peso da fonte (medium) */
+  font-style: italic; /* Estilo normal (sem itálico) */
+  font-display: swap; /* Mostra texto com fallback até a fonte carregar */
+}
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Azuis */
+  --blue-700: #0A46EA; /* Botões Principais, links, destaques */
+  --blue-800: #002EC4; /* Accordion ativo, títulos em destaque */
+  --blue-100: #E6F1FF; /* Fundo de badges e marcadores */
+
+  /* Roxos */
+  --purple-600: #6235E7; /* Badges, destaques em roxo */
+  --purple-50: #F6F0FF; /* Fundo de badges roxos */
+
+  /* Cinzas escuros */
+  --gray-900: #060709; /* Fundo do footer e newsletter */
+  --gray-800: #1E232E; /* Textos escuros, ícones */
+  --gray-700: #252B37; /* Títulos, textos principais */
+  --gray-600: #2E3646; /* Textos de navegação */
+
+  /* Cinzas médios */
+  --gray-500: #454F62; /* Textos secundários */
+  --gray-400: #646E82; /* Placeholders, textos de apoio */
+
+  /* Cinzas claros */
+  --gray-200: #C3CAD5; /* Bordas, ícones, scrollbar */
+  --gray-150: #D7DCE0; /* Bordas de inputs */
+  --gray-100: #E9EDF2; /* Bordas, divisores */
+  --gray-50: #F0F4F8; /* Fundo de inputs, seções */
+
+  /* Branco */
+  --white: #FFFFFF; /* Fundo principal, cards, textos claros */
+
+  /* Vermelho */
+  --red-700: #BE170B; /* Asterisco de campos obrigatórios */
+
+  /* Sombras - valores fixos */
+  --shadow-soft-xl: 0px 25px 25px -10px rgba(0, 0, 0, 0.05); /* Sombras suaves */
+  --shadow-hard-l: 0px 12px 16px -4px rgba(0, 0, 0, 0.15); /* Sombras médias */
+  --shadow-hard-2xl: 0px 25px 50px -10px rgba(0, 0, 0, 0.2); /* Sombras fortes */
+
+   /* ... cores anteriores ... */
+
+  /* Azul claro para fundo de badges */
+  --blue-50: #EDEDED; /* Fundo de overlay e gradientes */
+
+  /* Espaçamentos - escala Tailwind (número × 4 = px) */
+
+  --spacing-0-5: 2px; /* Padding de badges */
+  --spacing-1: 4px; /* Espaçamento interno de badges, gaps pequenos */
+  --spacing-1-5: 6px; /* Gaps entre ícones e texto */
+  --spacing-2: 8px; /* Gaps entre elementos, paddings internos */
+  --spacing-2-5: 10px; /* Gaps entre elementos */
+  --spacing-3: 12px; /* Padding de navegação, espaçamentos */
+  --spacing-4: 16px; /* Padding de cards, gaps entre elementos */
+  --spacing-5: 20px; /* Padding de navegação, espaçamentos */
+  --spacing-6: 24px; /* Gaps entre seções, padding de containers */
+  --spacing-8: 32px; /* Padding de sections, espaçamentos grandes */
+  --spacing-10: 40px; /* Padding de modais */
+  --spacing-12: 48px; /* Padding de footers, espaçamentos */
+  --spacing-16: 64px; /* Gaps entre seções principais */
+  --spacing-20: 80px; /* Padding de sections */
+  --spacing-22: 88px; /* Padding de sections */
+  --spacing-40: 160px; /* Gaps entre elementos de accordion */
+
+  /* Arredondamento de borda - escala Tailwind */
+  --rounded-sm: 4px; /* Badges, marcadores */
+  --rounded-md: 8px; /* Botões, inputs, accordions, cards */
+  --rounded-lg: 12px; /* Modais */
+  --rounded-xl: 16px; /* Accordion group */
+  --rounded-2xl: 24px; /* Cards principais */
+  --rounded-3xl: 32px; /* Imagens */
+  --rounded-full: 100px; /* Indicadores de tabs */
+
+  /* Espessura de borda */
+  --border-1: 1px; /* Bordas de inputs, divisores */
+  --border-2: 2px; /* Bordas de cards */
+/* Tamanhos de fonte (convertidos de px para rem) */
+  --text-xs: 0.75rem; /* 12px - textos pequenos, badges, labels menores */
+  --text-sm: 0.875rem; /* 14px - parágrafos pequenos, textos de apoio */
+  --text-base: 1rem; /* 16px - parágrafos normais, navegação */
+  --text-lg: 1.125rem; /* 18px - parágrafos grandes, subtítulos menores */
+  --text-xl: 1.25rem; /* 20px - títulos H6 */
+  --text-2xl: 2rem; /* 32px - títulos H4 */
+  --text-3xl: 2.5rem; /* 40px - títulos H3 */
+  --text-4xl: 4rem; /* 64px - títulos H1 */
+
+  /* Alturas de linha */
+  --leading-none: 1; /* 150% -> line-height: 1.5 (24px para 16px) */
+  --leading-tight: 1.2; /* 120% - títulos */
+  --leading-normal: 1.5; /* 150% - parágrafos, textos corridos */
+
+  /* Tamanhos de fonte (convertidos de px para rem) */
+  --text-xs: 0.75rem; /* 12px - textos pequenos, badges, labels menores */
+  --text-sm: 0.875rem; /* 14px - parágrafos pequenos, textos de apoio */
+  --text-base: 1rem; /* 16px - parágrafos normais, navegação */
+  --text-lg: 1.125rem; /* 18px - parágrafos grandes, subtítulos menores */
+  --text-xl: 1.25rem; /* 20px - títulos H6 */
+  --text-2xl: 2rem; /* 32px - títulos H4 */
+  --text-3xl: 2.5rem; /* 40px - títulos H3 */
+  --text-4xl: 4rem; /* 64px - títulos H1 */
+
+  /* Alturas de linha */
+  --leading-none: 1; /* 150% -> line-height: 1.5 (24px para 16px) */
+  --leading-tight: 1.2; /* 120% - títulos */
+  --leading-normal: 1.5; /* 150% - parágrafos, textos corridos */
+
+
+  /* Larguras máximas do container */
+  --container-mobile: 332px; /* Largura máxima para telas mobile */
+  --container-desktop: 1216px; /* Largura máxima para telas desktop */
+
+  /* Pesos de fonte do projeto */
+  --font-normal: 400; /* Peso regular para parágrafos e textos corridos */
+  --font-medium: 500; /* Peso médio para textos de navegação e botões */
+  --font-bold: 700; /* Peso negrito para títulos e destaques */
+
+  /* Sombras - escala Tailwind */
+  --shadow-soft-xl: 0px 25px 25px -10px rgba(0, 0, 0, 0.05); /* Accordion group */
+  --shadow-hard-l: 0px 12px 16px -4px rgba(0, 0, 0, 0.15); /* Dropdown menu */
+  --shadow-hard-2xl: 0px 25px 50px -10px rgba(0, 0, 0, 0.2); /* Modals */
+
+
+  /* Espaçamento entre letras - escala Tailwind */
+  --tracking-normal: 0em; /* Padrão - não há letter-spacing definido nos arquivos Figma */
+}
+
+
+
+
+
+

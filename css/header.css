@@ -1,0 +1,168 @@
+/* header.css - Estilos do cabeçalho */
+
+/* ============================================
+   BASE: Mobile-first
+   ============================================ */
+
+.header {
+  background: var(--white);
+  border-bottom: var(--border-1) solid var(--gray-100);
+  padding: var(--spacing-3) 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo | Hambúrguer (mobile) */
+  width: 100%;
+}
+
+/* ===== LOGO ===== */
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-left: 15px;
+}
+
+.header__logo img {
+  height: 40px;
+  width: 87.4px;
+}
+
+/* ===== NAVEGAÇÃO - OCULTA NO MOBILE ===== */
+
+.header__nav {
+  display: none;
+}
+
+/* ===== CTA - OCULTO NO MOBILE ===== */
+
+.header__cta {
+  display: none;
+}
+
+/* ===== HAMBÚRGUER - VISÍVEL NO MOBILE ===== */
+
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-1);
+  flex-shrink: 0;
+  padding-right: 15px;
+}
+
+.header__menu-btn span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--gray-800);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   DESKTOP (min-width: 1366px) - IDÊNTICO AO FIGMA
+   ============================================ */
+
+@media (min-width: 1366px) {
+
+  .header {
+    padding-top: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex; /* Ativa flexbox no header */
+    align-items: center; /* Centraliza verticalmente */
+  }
+
+
+  .header__nav-list--text {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 8px;
+  }
+
+  .header__nav-text--seta {
+    margin-bottom: 5px; 
+
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo | Nav | CTA */
+    width: 100%;
+    gap: 0; /* Remove gap para usar espaço entre os itens */
+  }
+
+  /* ===== LOGO ===== */
+
+  .header__logo {
+    flex: 0 0 auto; /* Mantém tamanho fixo, não cresce */
+    margin-right: var(--spacing-12); /* 48px - espaço entre logo e nav */
+  }
+
+  .header__logo img {
+    height: 48px; /* Um pouco maior no desktop */
+    width: auto;
+  }
+
+  /* ===== NAVEGAÇÃO - CENTRALIZADA ===== */
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo da nav */
+    flex: 1; /* Ocupa o espaço disponível entre logo e CTA */
+  }
+
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 32px entre os links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header__nav-list li {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__nav-list a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    font-size: var(--text-base);
+    padding: 0 0;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .header__nav-list a:hover {
+    color: var(--blue-700);
+  }
+
+  /* ===== CTA - À DIREITA ===== */
+
+  .header__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto; /* Mantém tamanho fixo */
+    margin-left: var(--spacing-12); /* 48px - espaço entre nav e CTA */
+    white-space: nowrap;
+  }
+
+  /* ===== HAMBÚRGUER - OCULTO ===== */
+
+  .header__menu-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,100 @@
+/* tabnav.css - Estilos da navegação por abas (Front-end / Back-end) */
+
+/* ============================================
+   NAVEGAÇÃO DAS ABAS
+   ============================================ */
+
+/* =========================================
+   MOBILE FIRST
+   =========================================*/
+
+.tabs-nav {
+  margin-bottom: var(--spacing-5);
+}
+
+.tabs-nav__list {
+  display: flex;
+  gap: var(--spacing-16);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: var(--border-1);
+  justify-content: center; /* Centraliza as abas no mobile */
+  align-content: center;
+
+}
+
+.tabs-nav__btn {
+  display: inline-block;
+  padding: var(--spacing-3) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--gray-500);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  
+}
+
+.tabs-nav__btn:hover {
+  color: var(--blue-700);
+}
+
+/* Aba ativa: texto azul + linha azul embaixo, alinhada ao border-bottom do .tabs-nav__list */
+.tabs-nav__btn.ativo {
+  color: var(--blue-700);
+  border-bottom-color: var(--blue-700);
+  border-bottom-width: 5px;
+  border-radius: 0px 0px 3px 3px;
+}
+
+/* ============================================
+   DESKTOP
+   ============================================ */
+
+@media (min-width: 1366px) {
+  .tabs-nav__list {
+    gap: var(--spacing-8);
+  }
+
+  .tabs-nav {
+  margin-bottom: var(--spacing-4);
+}
+
+.tabs-nav__list {
+  display: flex;
+  gap: var(--spacing-10);
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  border-bottom: var(--border-1);
+  justify-content: flex-start; /* Alinha as abas à esquerda no desktop */
+}
+
+.tabs-nav__btn {
+  display: inline-block;
+  padding: var(--spacing-3) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--gray-500);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabs-nav__btn:hover {
+  color: var(--blue-700);
+}
+
+/* Aba ativa: texto azul + linha azul embaixo, alinhada ao border-bottom do .tabs-nav__list */
+.tabs-nav__btn.ativo {
+  color: var(--blue-700);
+  border-bottom-color: var(--blue-700);
+}
+}
