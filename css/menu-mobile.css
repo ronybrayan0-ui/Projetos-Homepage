@@ -204,3 +204,132 @@
 .no-scroll {
   overflow: hidden;
 }
+
+/* ============================================
+   OVERLAY (fundo escuro)
+   ============================================ */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay--ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   MENU MOBILE
+   ============================================ */
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0; /* Abre Pela direita */
+  width: 332px;
+  max-width: 85vw;
+  height: 100vh;
+  z-index: 999;
+  background: var(--white);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* Escondido fora da tela */
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-hard-l);
+}
+
+.menu-mobile--aberto {
+  transform: translateX(0); /* Entra na tela */
+}
+
+/* ===== CABEÇALHO: X ===== */
+
+.menu-mobile__header {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--spacing-3) var(--spacing-5);
+  border-bottom: var(--border-1) solid var(--gray-100);
+}
+
+.menu-mobile__close {
+  background: none;
+  border: none;
+  padding: var(--spacing-1);
+  cursor: pointer;
+}
+
+.menu-mobile__close img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+
+.menu-mobile__nav {
+  flex: 1;
+  padding: var(--spacing-6) var(--spacing-5);
+}
+
+.menu-mobile__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.menu-mobile__list a {
+  display: block;
+  padding: var(--spacing-3) var(--spacing-2);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--gray-700);
+  text-decoration: none;
+  border-radius: var(--rounded-md);
+  transition: background 0.2s ease;
+}
+
+.menu-mobile__list a:hover {
+  background: var(--gray-50);
+}
+
+/* ===== RODAPÉ: REDES SOCIAIS + BOTÃO ===== */
+
+.menu-mobile__footer {
+  padding: var(--spacing-6) var(--spacing-5);
+  border-top: var(--border-1) solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.menu-mobile__social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--spacing-5);
+  justify-content: center;
+}
+
+.menu-mobile__social a {
+  display: block;
+}
+
+.menu-mobile__social img {
+  width: 24px;
+  height: 24px;
+}
+
+.menu-mobile__cta {
+  width: 100%;
+  text-align: center;
+}
