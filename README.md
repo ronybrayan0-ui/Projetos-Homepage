@@ -6,6 +6,7 @@ desenvolvimento web, construída com **HTML5, CSS3 e JavaScript puro**
 previamente no Figma.
 
 🔗 **Demo ao vivo:** [https://ronybrayan0-ui.github.io/Projetos-Homepage/]
+
 🎨 **Protótipo do Figma:** [https://www.figma.com/design/Mqlj7VivMNEgK7KsmLaVJN/🔥-Challenge---Studio-Academy?node-id=13505-1710&p=f&t=PA4onzC1xpUUDsmQ-0]
 (Codifiquei com base no layout do Figma).
 
@@ -101,21 +102,6 @@ consistência visual em qualquer alteração futura.
     └── secoes.js                # validação do formulário de newsletter
 ```
 
-> **Nota:** alguns arquivos CSS ainda estão com nomes de exercício
-> (`exercicio-1.css`, `exercicio-2.css`, `exercicio-3.css`). Recomendo
-> renomeá-los para nomes descritivos (ex: `tabs-nav.css`,
-> `portfolio.css`, `newsletter.css`) antes de publicar, removendo
-> qualquer duplicidade com os arquivos já renomeados.
-
-## Como rodar localmente
-
-```bash
-git clone https://github.com/ronybrayan0-ui/Projeto-Homepage.git
-cd Projeto-Homepage
-```
-
-Abra o `index.html` diretamente no navegador, ou use a extensão
-"Live Server" do VS Code para recarregamento automático ao editar.
 
 ## Tecnologias usadas
 
@@ -124,10 +110,3 @@ Abra o `index.html` diretamente no navegador, ou use a extensão
 - **CSS3** — mobile-first, Flexbox, variáveis CSS (design tokens),
   `@font-face` para fonte customizada (Inter)
 - **JavaScript** (ES6+, módulos) — sem bibliotecas externas
-
-## Possíveis melhorias futuras
-
-- [ ] Implementar a filtragem real dos cards nas abas Front-end/Back-end
-- [ ] Consolidar os arquivos `exercicio-*.css` em nomes definitivos
-- [ ] Adicionar testes de acessibilidade (contraste, navegação por teclado)
-- [ ] Migrar para Tailwind CSS (mencionado como tema do próprio conteúdo do site)
