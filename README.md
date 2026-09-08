@@ -1,6 +1,6 @@
 # Studio Academy — Landing Page Responsiva
 
-Landing page responsiva de uma plataforma fictícia de ensino de
+Landing page responsiva de uma plataforma conceituada de ensino de
 desenvolvimento web, construída com **HTML5, CSS3 e JavaScript puro**
 (sem frameworks ou bibliotecas), a partir de um layout desenhado
 previamente no Figma.
