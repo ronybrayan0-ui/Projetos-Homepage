@@ -158,6 +158,15 @@
     flex: 0 0 auto; /* Mantém tamanho fixo */
     margin-left: var(--spacing-12); /* 48px - espaço entre nav e CTA */
     white-space: nowrap;
+   background-color: var(--blue-700);
+    color: var(--white);
+    width: 195px;
+    height: 54px;
+    border-radius: var(--rounded-md);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   /* ===== HAMBÚRGUER - OCULTO ===== */
