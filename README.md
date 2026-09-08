@@ -5,8 +5,9 @@ desenvolvimento web, construída com **HTML5, CSS3 e JavaScript puro**
 (sem frameworks ou bibliotecas), a partir de um layout desenhado
 previamente no Figma.
 
-🔗 **Demo ao vivo:** [em breve]
-🎨 **Protótipo no Figma:** [link aqui, se tiver]
+🔗 **Demo ao vivo:** [https://ronybrayan0-ui.github.io/Projetos-Homepage/]
+🎨 **Protótipo do Figma:** [https://www.figma.com/design/Mqlj7VivMNEgK7KsmLaVJN/🔥-Challenge---Studio-Academy?node-id=13505-1710&p=f&t=PA4onzC1xpUUDsmQ-0]
+(Codifiquei com base no layout do Figma).
 
 ## Sobre o projeto
 
@@ -109,8 +110,8 @@ consistência visual em qualquer alteração futura.
 ## Como rodar localmente
 
 ```bash
-git clone https://github.com/ronybrayan0-ui/Projetos-Front-End.git
-cd Projetos-Front-End
+git clone https://github.com/ronybrayan0-ui/Projeto-Homepage.git
+cd Projeto-Homepage
 ```
 
 Abra o `index.html` diretamente no navegador, ou use a extensão
